@@ -5,7 +5,7 @@ interface
 uses
   System.SysUtils, System.Types, System.UITypes, System.Classes, System.Variants,
   FMX.Types, FMX.Controls, FMX.Forms, FMX.Graphics, FMX.Dialogs,
-  PriceCompare.ComparisonFrame, FMX.StdCtrls, FMX.Controls.Presentation,
+  FMX.StdCtrls, FMX.Controls.Presentation,
   System.Actions, FMX.ActnList;
 
 type
@@ -29,7 +29,7 @@ var
 
 implementation
 uses
-  DebugUtils.Log;
+  DebugUtils.Log, PriceCompare.ComparisonFrame;
 
 {$R *.fmx}
 {$R *.LgXhdpiPh.fmx ANDROID}
@@ -41,20 +41,15 @@ var
 begin
   LFrame := TPriceCompareFrame.Create(Self);
 
+// Update the name so that multiple frames can exist on the same form
   LFrame.Name := LFrame.Name + IntToStr(FNamedInstance);
-//  LFrame.cbMeasurement.OnChange := LFrame.cbMeasurementChange;
-//  LFrame.cbCurrency.OnChange := LFrame.cbCurrencyChange;
-//  LFrame.Edit1.OnChangeTracking := LFrame.Edit1Change;
-//  LFrame.Edit2.OnChangeTracking := LFrame.Edit2Change;
-  LFrame.Edit1.KeyboardType := TVirtualKeyboardType.DecimalNumberPad;
-  LFrame.Edit2.KeyboardType := TVirtualKeyboardType.DecimalNumberPad;
+  Inc(FNamedInstance);
 
   LFrame.RepopulateLists;
 
-  Inc(FNamedInstance);
   panelMain.AddObject(LFrame);
 
-  LFrame.Edit1.SetFocus;
+  LFrame.edMeasurement.SetFocus;
 end;
 
 procedure TfrmPriceCompare.btnPlusClick(Sender: TObject);

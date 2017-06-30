@@ -8,7 +8,8 @@ uses
   PriceCompare.ConvCurrency in 'PriceCompare.ConvCurrency.pas',
   PriceCompare.CurrencyTypes in 'PriceCompare.CurrencyTypes.pas',
   PriceCompare.MainForm in 'PriceCompare.MainForm.pas' {frmPriceCompare},
-  PriceCompare.MeasurementMappings in 'PriceCompare.MeasurementMappings.pas';
+  PriceCompare.MeasurementMappings in 'PriceCompare.MeasurementMappings.pas',
+  PriceCompare.MappingBase in 'PriceCompare.MappingBase.pas';
 
 {$R *.res}
 

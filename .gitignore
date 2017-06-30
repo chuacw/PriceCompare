@@ -115,3 +115,17 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Project directories
+Android
+Linux64
+Win32
+Win64
+OSX
+iOSDevice32
+iOSDevice64
+iOSSimulator
+OSX64
+
+# Android manifest template
+AndroidManifest.template.xml

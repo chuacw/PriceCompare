@@ -1,15 +1,14 @@
 ﻿unit PriceCompare.CurrencyTypes;
 
 interface
-uses System.StdConvs, System.ConvUtils, System.Generics.Collections;
+uses System.StdConvs, System.ConvUtils, System.Generics.Collections,
+  PriceCompare.MappingBase;
 
 type
-  TCurrencyUnit = class  // ConvUtils StdConvs
+  TCurrencyUnit = class(TMappingBase)  // ConvUtils StdConvs
   protected
     class constructor Create;
     class destructor Destroy;
-  public
-    function UnitType: TConvType; virtual; abstract;
   end;
 
   TCurrencyCents = class(TCurrencyUnit)
@@ -25,7 +24,6 @@ type
   end;
 
 procedure RegisterCurrencyTypes;
-procedure UnregisterCurrencyTypes;
 function CurrencyList: TList<TCurrencyUnit>;
 
 implementation
@@ -57,14 +55,6 @@ begin
   CurrencyRegistry.Add(TCurrencyDollars.Create);
 end;
 
-procedure UnregisterCurrencyTypes;
-var
-  LCurrencyUnit: TCurrencyUnit;
-begin
-//  for LCurrencyUnit in CurrencyRegistry do
-//    LCurrencyUnit.Free;
-end;
-
 { TCurrencyCents }
 
 function TCurrencyCents.ToString: string;
@@ -91,6 +81,4 @@ end;
 
 initialization
   RegisterCurrencyTypes;
-//finalization
-//  UnregisterCurrencyTypes;
 end.

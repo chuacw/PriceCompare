@@ -1,15 +1,14 @@
 unit PriceCompare.MeasurementMappings;
 
 interface
-uses System.StdConvs, System.ConvUtils, System.Generics.Collections;
+uses System.StdConvs, System.ConvUtils, System.Generics.Collections,
+  PriceCompare.MappingBase;
 
 type
-  TMeasurementUnit = class  // ConvUtils StdConvs
+  TMeasurementUnit = class(TMappingBase)  // ConvUtils StdConvs
   protected
     class constructor Create;
     class destructor Destroy;
-  public
-    function UnitType: TConvType; virtual; abstract;
   end;
 
   Tg   = class;
@@ -56,7 +55,7 @@ type
   end;
 
 procedure RegisterMeasurementTypes;
-procedure UnregisterMeasurementTypes;
+//procedure UnregisterMeasurementTypes;
 function MeasurementList: TList<TMeasurementUnit>;
 
 implementation
@@ -163,14 +162,14 @@ begin
   MeasurementRegistry.Add(TOz.Create);
 end;
 
-procedure UnregisterMeasurementTypes;
-var
-  LMeasurementUnit: TMeasurementUnit;
-begin
+//procedure UnregisterMeasurementTypes;
+//var
+//  LMeasurementUnit: TMeasurementUnit;
+//begin
 //  for LMeasurementUnit in MeasurementRegistry do
 //    LMeasurementUnit.Free;
-
-end;
+//
+//end;
 
 initialization
   RegisterMeasurementTypes;

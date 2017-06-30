@@ -20,9 +20,10 @@ object PriceCompareFrame: TPriceCompareFrame
     TabOrder = 1
     OnChange = cbMeasurementChange
   end
-  object Edit1: TEdit
+  object edMeasurement: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 0
+    KeyboardType = DecimalNumberPad
     Position.X = 16.000000000000000000
     Position.Y = 8.000000000000000000
     OnChangeTracking = Edit1Change
@@ -40,9 +41,10 @@ object PriceCompareFrame: TPriceCompareFrame
     TabOrder = 2
     OnChange = cbCurrencyChange
   end
-  object Edit2: TEdit
+  object edCurrency: TEdit
     Touch.InteractiveGestures = [LongTap, DoubleTap]
     TabOrder = 3
+    KeyboardType = DecimalNumberPad
     Position.X = 248.000000000000000000
     Position.Y = 8.000000000000000000
     OnChangeTracking = Edit2Change
