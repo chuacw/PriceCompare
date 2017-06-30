@@ -1,0 +1,43 @@
+object frmPriceCompare: TfrmPriceCompare
+  Left = 0
+  Top = 0
+  Caption = 'Price Comparer'
+  ClientHeight = 480
+  ClientWidth = 640
+  FormFactor.Width = 320
+  FormFactor.Height = 480
+  FormFactor.Devices = [Desktop]
+  OnCreate = FormCreate
+  DesignerMasterStyle = 3
+  object Panel1: TPanel
+    Align = Top
+    Size.Width = 640.000000000000000000
+    Size.Height = 73.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 0
+    object btnPlus: TButton
+      Position.Y = 8.000000000000000000
+      Size.Width = 33.000000000000000000
+      Size.Height = 57.000000000000000000
+      Size.PlatformDefault = False
+      TabOrder = 0
+      Text = '+'
+      OnClick = btnPlusClick
+    end
+  end
+  object panelMain: TPanel
+    Align = Client
+    Size.Width = 640.000000000000000000
+    Size.Height = 407.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+  end
+  object ActionList1: TActionList
+    Left = 520
+    Top = 113
+    object acAdd: TAction
+      Text = 'Add'
+      OnExecute = acAddExecute
+    end
+  end
+end

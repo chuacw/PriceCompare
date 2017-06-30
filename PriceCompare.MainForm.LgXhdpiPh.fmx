@@ -1,0 +1,13 @@
+inherited frmPriceCompare_LgXhdpiPh: TfrmPriceCompare_LgXhdpiPh
+  Caption = 'Price Comparator'
+  ClientHeight = 695
+  ClientWidth = 450
+  DesignerMasterStyle = 3
+  inherited Panel1: TPanel
+    Size.Width = 450.000000000000000000
+  end
+  inherited panelMain: TPanel
+    Size.Width = 450.000000000000000000
+    Size.Height = 622.000000000000000000
+  end
+end

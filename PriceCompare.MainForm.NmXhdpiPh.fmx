@@ -1,0 +1,12 @@
+inherited frmPriceCompare_NmXhdpiPh: TfrmPriceCompare_NmXhdpiPh
+  ClientHeight = 615
+  ClientWidth = 400
+  DesignerMasterStyle = 3
+  inherited Panel1: TPanel
+    Size.Width = 400.000000000000000000
+  end
+  inherited panelMain: TPanel
+    Size.Width = 400.000000000000000000
+    Size.Height = 542.000000000000000000
+  end
+end

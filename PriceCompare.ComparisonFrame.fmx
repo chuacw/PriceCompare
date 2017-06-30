@@ -1,0 +1,68 @@
+object PriceCompareFrame: TPriceCompareFrame
+  Align = Top
+  Size.Width = 375.000000000000000000
+  Size.Height = 82.000000000000000000
+  Size.PlatformDefault = False
+  object cbMeasurement: TComboBox
+    Items.Strings = (
+      'g'
+      'kg'
+      'L'
+      'ml'
+      'mg'
+      'oz')
+    ItemIndex = 0
+    Position.X = 120.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 49.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 1
+    OnChange = cbMeasurementChange
+  end
+  object Edit1: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 0
+    Position.X = 16.000000000000000000
+    Position.Y = 8.000000000000000000
+    OnChangeTracking = Edit1Change
+  end
+  object cbCurrency: TComboBox
+    Items.Strings = (
+      '$'
+      #162)
+    ItemIndex = 1
+    Position.X = 184.000000000000000000
+    Position.Y = 8.000000000000000000
+    Size.Width = 49.000000000000000000
+    Size.Height = 22.000000000000000000
+    Size.PlatformDefault = False
+    TabOrder = 2
+    OnChange = cbCurrencyChange
+  end
+  object Edit2: TEdit
+    Touch.InteractiveGestures = [LongTap, DoubleTap]
+    TabOrder = 3
+    Position.X = 248.000000000000000000
+    Position.Y = 8.000000000000000000
+    OnChangeTracking = Edit2Change
+  end
+  object Label1: TLabel
+    Position.X = 16.000000000000000000
+    Position.Y = 56.000000000000000000
+    Size.Width = 153.000000000000000000
+    Size.Height = 25.000000000000000000
+    Size.PlatformDefault = False
+    Text = '... Results ...'
+    TabOrder = 5
+    TabStop = False
+  end
+  object btnRemoveFrame: TButton
+    Anchors = [akRight, akBottom]
+    Position.X = 288.000000000000000000
+    Position.Y = 56.000000000000000000
+    TabOrder = 4
+    Text = 'Remove'
+    OnClick = btnRemoveFrameClick
+  end
+end
